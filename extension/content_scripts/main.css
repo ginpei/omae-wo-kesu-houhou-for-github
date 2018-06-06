@@ -6,6 +6,7 @@
   position: fixed;
   right: 10px;
   bottom: 10px;
+  z-index: 31;  /* .pagehead ul.pagehead-actions + 1 */
 }
   .OMEWKSHH button,
   .OMEWKSHH textarea {
