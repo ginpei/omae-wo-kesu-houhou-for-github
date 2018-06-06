@@ -54,31 +54,59 @@
 
   function draggable (elRoot) {
     const elWrapper = elRoot.querySelector('.OMEWKSHH');
+    const elBalloon = elRoot.querySelector('.OMEWKSHH-balloon');
+    const elAssistant = elRoot.querySelector('.OMEWKSHH-assistant');
     const pos = { left: 0, top: 0 };
+    let dragging = false;
     let dragPosition = null;
+    let balloonVisible = true;
+    let justAfterDragged = false;
 
-    elRoot.querySelector('.OMEWKSHH-assistant').addEventListener('mousedown', (event) => {
+    elAssistant.addEventListener('click', () => {
+      if (justAfterDragged) {
+        return;
+      }
+
+      balloonVisible = !balloonVisible;
+      elBalloon.style.display = balloonVisible ? '' : 'none';
+    });
+
+    elAssistant.addEventListener('mousedown', (event) => {
       // prevent dragging image
       event.preventDefault();
-      dragPosition = getEventPosition(event);
+      dragging = true;
     });
+
     document.addEventListener('mousemove', (event) => {
-      if (!dragPosition) {
+      if (!dragging) {
         return;
       }
 
       const p = getEventPosition(event);
-      pos.left += p.left - dragPosition.left;
-      pos.top += p.top - dragPosition.top;
-      elWrapper.style.transform = `translate(${pos.left}px, ${pos.top}px)`;
+
+      if (dragPosition) {
+        pos.left += p.left - dragPosition.left;
+        pos.top += p.top - dragPosition.top;
+        elWrapper.style.transform = `translate(${pos.left}px, ${pos.top}px)`;
+      }
 
       dragPosition = p;
     });
+
     document.addEventListener('mouseup', () => {
-      if (!dragPosition) {
+      if (!dragging) {
         return;
       }
 
+      // to stop click
+      if (dragPosition) {
+        justAfterDragged = true;
+        setTimeout(() => {
+          justAfterDragged = false;
+        }, 1);
+      }
+
+      dragging = false;
       dragPosition = null;
     });
   }
