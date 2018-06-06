@@ -9,6 +9,13 @@
     return result;
   }
 
+  function getEventPosition (event) {
+    return {
+      left: event.clientX,
+      top: event.clientY,
+    };
+  }
+
   async function init (elRoot, message) {
     elRoot.innerHTML = message.html;
 
@@ -42,6 +49,34 @@
           sendMessage('action', data);
         });
       });
+    });
+
+    const elWrapper = elRoot.querySelector('.OMEWKSHH');
+    const pos = { left: 0, top: 0 };
+    let dragPosition = null;
+    elRoot.querySelector('.OMEWKSHH-assistant').addEventListener('mousedown', (event) => {
+      // prevent dragging image
+      event.preventDefault();
+      dragPosition = getEventPosition(event);
+    });
+    document.addEventListener('mousemove', (event) => {
+      if (!dragPosition) {
+        return;
+      }
+
+      const p = getEventPosition(event);
+      pos.left += p.left - dragPosition.left;
+      pos.top += p.top - dragPosition.top;
+      elWrapper.style.transform = `translate(${pos.left}px, ${pos.top}px)`;
+
+      dragPosition = p;
+    });
+    document.addEventListener('mouseup', () => {
+      if (!dragPosition) {
+        return;
+      }
+
+      dragPosition = null;
     });
   }
 
