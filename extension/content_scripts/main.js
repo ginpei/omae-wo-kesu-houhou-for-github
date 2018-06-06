@@ -104,6 +104,32 @@
         setTimeout(() => {
           justAfterDragged = false;
         }, 1);
+
+        // get back to inside screen
+        const rect = elAssistant.getBoundingClientRect();
+        const elHtml = document.documentElement;
+        let changed = false;
+        if (rect.top < 0) {
+          pos.top -= rect.top;
+          changed = true;
+        } else if (rect.bottom > elHtml.clientHeight) {
+          pos.top -= rect.bottom - elHtml.clientHeight;
+          changed = true;
+        }
+        if (rect.left < 0) {
+          pos.left -= rect.left;
+          changed = true;
+        } else if (rect.right > elHtml.clientWidth) {
+          pos.left -= rect.right - elHtml.clientWidth;
+          changed = true;
+        }
+        if (changed) {
+          elWrapper.style.transition = 'transform 200ms';
+          elWrapper.style.transform = `translate(${pos.left}px, ${pos.top}px)`;
+          elWrapper.addEventListener('transitionend', () => {
+            elWrapper.style.transition = '';
+          }, { once: true });
+        }
       }
 
       dragging = false;
