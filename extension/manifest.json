@@ -21,12 +21,16 @@
       ],
       "run_at": "document_end",
       "js": [
+        "vendor/webextension-polyfill/browser-polyfill.min.js",
         "content_scripts/main.js"
       ],
       "css": [
         "content_scripts/main.css"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    "content_scripts/Octocat.png"
   ],
   "options_page": "options_ui/settings.html",
   "options_ui": {
