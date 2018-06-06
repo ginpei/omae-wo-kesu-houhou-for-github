@@ -1,5 +1,7 @@
 # WebExtension
 
+![Screenshot where Octocat-chan stands at right bottom of a GitHub page](doc\screenshot.png)
+
 ## License
 
 - MIT
