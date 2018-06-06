@@ -50,10 +50,13 @@
         });
       });
     });
+  }
 
+  function draggable (elRoot) {
     const elWrapper = elRoot.querySelector('.OMEWKSHH');
     const pos = { left: 0, top: 0 };
     let dragPosition = null;
+
     elRoot.querySelector('.OMEWKSHH-assistant').addEventListener('mousedown', (event) => {
       // prevent dragging image
       event.preventDefault();
@@ -100,7 +103,8 @@
   // wait for commands
   browser.runtime.onMessage.addListener(async (message) => {
     if (message.type === 'init') {
-      await init(el, message);
+      init(el, message);
+      draggable(el);
     } else {
       console.warn(`Unknown message type ${message.type}.`, message);
     }
