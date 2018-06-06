@@ -1,19 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "XXX",
+  "name": "お前を消す方法 for GitHub",
   "version": "1.0.0",
-  "description": "XXX",
+  "description": "[ お前を消す方法　　] [ 検 索 ]",
   "author": "Ginpei Takanashi",
   "icons": {
     "90": "icons/icon-90.png"
   },
   "permissions": [
   ],
-  "browser_action": {
-    "default_icon": "icons/icon-90.png",
-    "default_title": "XXX",
-    "default_popup": "popup/index.html"
-  },
   "background": {
     "page": "background/index.html",
     "persistent": true
@@ -21,7 +16,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*/*"
+        "https://ginpei.info/*",
+        "https://*.github.com/*"
       ],
       "run_at": "document_end",
       "js": [

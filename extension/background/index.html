@@ -4,10 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>XXX Background</title>
+  <title>お前を消す方法 Background</title>
 </head>
 <body>
+  <script id="template-Assistant" type="text/x-template">
+    <form class="OMEWKSHH" method="GET" action="https://github.com/search">
+      <div class="OMEWKSHH-balloon">
+        <div class="OMEWKSHH-balloon-message">何について調べますか？</div>
+        <div class="OMEWKSHH-balloon-inputWrapper">
+          <textarea data-OMEWKSHH-actions="input:inputQuery" class="OMEWKSHH-balloon-input" name="q" placeholder="お前を消す方法">お前を消す方法</textarea>
+        </div>
+        <div class="OMEWKSHH-balloon-controlRow">
+          <button data-OMEWKSHH-actions="click:openOptions" class="OMEWKSHH-balloon-button" accesskey="o">オプション (<u>O</u>)</button>
+          <button class="OMEWKSHH-balloon-button" accesskey="s">検索 (<u>S</u>)</button>
+        </div>
+        <svg class="OMEWKSHH-balloonFrame">
+          <defs>
+            <filter id="fBlur">
+              <feGaussianBlur result="blurOut" in="SourceAlpha" stdDeviation="5" />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+          <path class="OMEWKSHH-balloonFrame-path" xxx-filter="url(#fBlur)" d="
+            " />
+        </svg>
+      </div>
+      <div class="OMEWKSHH-assistant">
+        <img data-OMEWKSHH-image class="OMEWKSHH-assistant-image" src="/content_scripts/Octocat.png" width="150" height="124" alt="Octocat" />
+      </div>
+    </form>
+  </script>
   <script src="/vendor/webextension-polyfill/browser-polyfill.min.js"></script>
-  <script src="/background/main.js"></script>
+  <script type="module" src="/background/main.js"></script>
 </body>
 </html>

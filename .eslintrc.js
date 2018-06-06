@@ -15,9 +15,22 @@ module.exports = {
       "error",
       "always-multiline",
     ],
+    "import/extensions": [
+      "error",
+      "always",
+    ],
     "space-before-function-paren": [
       "error",
       "always",
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+        ],
+      },
     ],
     "no-param-reassign": [
       "error",

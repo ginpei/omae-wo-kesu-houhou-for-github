@@ -1,0 +1,69 @@
+.OMEWKSHH {
+  --color-controlBorder: lightgray;
+
+  font-family: "MS UI Gothic", sans-serif;
+  font-size: 16px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+  .OMEWKSHH button,
+  .OMEWKSHH textarea {
+    font-family: inherit;
+  }
+
+.OMEWKSHH-balloon {
+  bottom: 115px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 5px 8px;
+  position: absolute;
+  right: 0;
+  width: 250px;
+}
+
+.OMEWKSHH-balloon-message {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.OMEWKSHH-balloon-input {
+  border: 1px solid var(--color-controlBorder);
+  box-sizing: border-box;
+  font-size: 0.7em;
+  margin-bottom: 15px;
+  resize: none;
+  width: 100%;
+}
+
+.OMEWKSHH-balloon-controlRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.OMEWKSHH-balloon-button {
+  background-color: transparent;
+  border: 1px solid var(--color-controlBorder);
+  border-radius: 0.2em;
+  min-width: 7em;
+}
+
+svg.OMEWKSHH-balloonFrame {
+  position: absolute;
+  left: 0;
+  overflow: visible;
+  top: 0;
+  z-index: -1;
+}
+
+path.OMEWKSHH-balloonFrame-path {
+  fill: lightyellow;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.OMEWKSHH-assistant {
+  bottom: 0;
+  position: absolute;
+  right: 110px;
+}

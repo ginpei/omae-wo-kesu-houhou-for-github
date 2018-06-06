@@ -1,6 +1,4 @@
-/* global BackgroundController */
+import BackgroundController from './BackgroundController.js';
 
-(async () => {
-  const controller = new BackgroundController();
-  controller.start();
-})();
+const controller = new BackgroundController();
+controller.start();
