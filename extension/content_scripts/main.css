@@ -26,7 +26,7 @@
   padding: 5px 8px;
   position: absolute;
   right: 0;
-  width: 250px;
+  width: 20em;
 }
 
 .OMEWKSHH-balloon-message {
@@ -56,10 +56,12 @@
 }
 
 svg.OMEWKSHH-balloonFrame {
+  height: calc(100% + 20px);
   position: absolute;
   left: 0;
   overflow: visible;
   top: 0;
+  width: 100%;
   z-index: -1;
 }
 
@@ -72,5 +74,5 @@ path.OMEWKSHH-balloonFrame-path {
 .OMEWKSHH-assistant {
   bottom: 0;
   position: absolute;
-  right: 110px;
+  right: 10em;
 }
