@@ -1,9 +1,7 @@
-import AssistantUI from './AssistantUI.js';
-
-/* globals browser */
+/* globals browser, AssistantUI */
 
 // eslint-disable-next-line no-unused-vars
-export default class BackgroundController {
+class BackgroundController {
   constructor () {
     this._targets = [];
     this.assistant = new AssistantUI({

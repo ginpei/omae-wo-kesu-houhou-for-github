@@ -1,4 +1,6 @@
-import BackgroundController from './BackgroundController.js';
+/* globals BackgroundController */
 
-const controller = new BackgroundController();
-controller.start();
+(() => {
+  const controller = new BackgroundController();
+  controller.start();
+})();
