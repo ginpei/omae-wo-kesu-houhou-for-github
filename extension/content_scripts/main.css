@@ -5,9 +5,15 @@
   font-size: 16px;
   position: fixed;
   right: 10px;
+  transition: opacity 200ms;
   bottom: 10px;
   z-index: 31;  /* .pagehead ul.pagehead-actions + 1 */
 }
+  .OMEWKSHH[data-OMEWKSHH-initializing="true"] {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px);
+  }
   .OMEWKSHH button,
   .OMEWKSHH textarea {
     font-family: inherit;

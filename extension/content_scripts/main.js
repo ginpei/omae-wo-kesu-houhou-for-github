@@ -19,6 +19,9 @@
   async function init (elRoot, message) {
     elRoot.innerHTML = message.html;
 
+    const elWrapper = elRoot.querySelector('.OMEWKSHH');
+    elWrapper.setAttribute('data-OMEWKSHH-initializing', 'true');
+
     const elBalloon = elRoot.querySelector('.OMEWKSHH-balloon');
     const domRectBalloon = elBalloon.getBoundingClientRect();
     const rectBalloon = {
@@ -137,6 +140,22 @@
     });
   }
 
+  function waitUntilLoaded (elRoot) {
+    const elImages = Array.from(elRoot.querySelectorAll('img'));
+    return Promise.all(elImages.map((elImg) => {
+      const p = new Promise((resolve, reject) => {
+        elImg.addEventListener('load', resolve, { once: true });
+        elImg.addEventListener('error', reject, { once: true });
+      });
+      return p;
+    }));
+  }
+
+  function activate (elRoot) {
+    const elWrapper = elRoot.querySelector('.OMEWKSHH');
+    elWrapper.removeAttribute('data-OMEWKSHH-initializing');
+  }
+
   // ----
 
   // reset
@@ -159,6 +178,8 @@
     if (message.type === 'init') {
       init(el, message);
       draggable(el);
+      await waitUntilLoaded(el);
+      activate(el);
     } else {
       console.warn(`Unknown message type ${message.type}.`, message);
     }
