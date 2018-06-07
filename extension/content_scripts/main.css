@@ -57,9 +57,9 @@
 
 svg.OMEWKSHH-balloonFrame {
   height: calc(100% + 20px);
-  position: absolute;
   left: 0;
   overflow: visible;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: -1;
